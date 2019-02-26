@@ -30,4 +30,9 @@
   * Home, TV, detail 페이지에 해당하는 view 를 만듬
   * .env 파일 생성
     * import 하는 소스의 root path를 지정해준다.
+  * Composition에 대한 내용
+    * 두개의 컴포넌트를 동시에 렌더링 시키는 방식
+    * 부모의 경로(path)가 같을 경우, react-router는 동시에 렌더링을 시킨다.
+    * Router안에서 경로가 중복되는 경우가 발생하게 되면, 에러가 발생한다. 예제 : ```You tried to redirect to the same route you're currently on : "/"``` 이때 switch를 사용하여 방지시킴
+  
   
