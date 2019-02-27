@@ -12,7 +12,7 @@
 1. Deployment
 ---
 ### 강의 진행 내용
-* 2.23 토 - **Fundamentals**
+* __2.23 토__ - **Fundamentals**
   1. Arrow Functions
   1. Template Literals
   1. Object Destructuring
@@ -22,7 +22,7 @@
   1. Array.filter
   1. forEach, includes, push
 
-* 2.25 월
+* __2.25 월 진행내용__
   1. React Router Part One
   1. React Router Part two
   ---
@@ -37,6 +37,28 @@
     * 두개의 컴포넌트를 동시에 렌더링 시키는 방식
     * 부모의 경로(path)가 같을 경우, react-router는 동시에 렌더링을 시킨다.
     * Router안에서 경로가 중복되는 경우가 발생하게 되면, 에러가 발생한다. 예제 : ```You tried to redirect to the same route you're currently on : "/"``` 이때 switch를 사용하여 방지시킴
+* __2.27 수 진행내용__
+  1. CSS in React part One
+  1. CSS in React part Two
+  1. CSS in React part Three
+  1. GlobalStyles and Header
+  1. Location Aware Header
+  ---
+  * 리액트에서 스타일을 주는 방법은 여러가지가 있다. 이 강의에서는 styled-components를 이용하여 스타일을 지정하였다.
+    1. 가장 기본적으로 css를 이용하는 방법이 있고(전통적인방법)
+    1. scss를 사용하는 방법
+    1. styled-components를 이용하는 방법
+    1. 그 외 등등
+
+  * **진행순서**
+    * yarn으로 styled-components를 추가한다.(https://www.styled-components.com/)
+    * Header의 각 요소들을 변경시킴
+      * header -> Header
+      * ul -> List
+      * li -> Item
+      * a -> Link(이건 react-router 요소로 변경)
+    * yarn으로 styled-reset을 추가한다.(https://github.com/zacanger/styled-reset) - css리셋하는걸로 브라우저별로 적용되어 있는 default css를 제거해준다.
+    
 ---
   
   
