@@ -62,7 +62,12 @@
   * **withRouter사용**
     * 현재 어떤 메뉴가 선택이 되었는지 알려주기 위해서, 각 메뉴의 bottom-border로 밑줄을 그어놓았다. 지금 각 메뉴 선택에 대한 값을 path로 구분하고 있으므로, 현재 상태를 알려주는 withRouter를 이용하여 style을 주었다.
     * withRouter를 사용하면 props로 현재 페이지에 대한 정보를 알려주므로, 현재 어디 메뉴에 있는지 pathname을 알려준다.(자세한건 https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/withRouter.md)
-    
+  * styled-components는 말그대로 component이므로, props를 전달할 수 있게 해준다.. -> 공통된 styled를 사용하는 요소는 아주 편리하게 스타일을 지정할 수 있겠다.(어떻게 이런 생각을?? 신기방기네.. - https://github.com/alpaca623/nomflix/commit/61e400c6337ccec15614c1aaae62aecbbc35d10a#r32500711 참고)
+
+* 2.28 목 진행사항
+  * 제공되는 영화 API를 이용해 데이터를 받아온다.(https://www.themoviedb.org/?language=ko-KR)
+  * api를 받아오는 소스를 컴포넌트마다 적어놓으면 안되니까, api.js 파일을 만들어서 데이터를 받아오는 곳을 만들어둔다.
+
 ---
   
   
