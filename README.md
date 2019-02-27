@@ -65,9 +65,28 @@
   * styled-components는 말그대로 component이므로, props를 전달할 수 있게 해준다.. -> 공통된 styled를 사용하는 요소는 아주 편리하게 스타일을 지정할 수 있겠다.(어떻게 이런 생각을?? 신기방기네.. - https://github.com/alpaca623/nomflix/commit/61e400c6337ccec15614c1aaae62aecbbc35d10a#r32500711 참고)
 
 * 2.28 목 진행사항
+  1. Introduction to The Movie DB API
+  1. Sexy Networking with Axios Instances
+  1. API Verbs Part One
+  1. API Verbs Part Two
+  ---
   * 제공되는 영화 API를 이용해 데이터를 받아온다.(https://www.themoviedb.org/?language=ko-KR)
-  * api를 받아오는 소스를 컴포넌트마다 적어놓으면 안되니까, api.js 파일을 만들어서 데이터를 받아오는 곳을 만들어둔다.
+  * Axios 사용 방법은 github page참고(https://github.com/axios/axios)
+    - axios에서 파라미터 보내는 방법을 알아냈다!
+    - 검색어 같은 경우, 공백 등 검색어에 대한 문제가 있을 수도 있기 때문에, 요청할 때 인코딩을 해서 넘겨줘야 하는 경우가 있다. javascript에서는 기본 제공되는 **encodeURIComponent** 함수를 이용하면 된다.
+  * api를 받아오는 소스를 컴포넌트마다 적어놓으면 안되니까, api.js 파일을 만들어서 데이터를 받아오는 곳을 만들어둔다. -> 데이터 들어오게 하는것 성공.
+    * 가져올 API 목록
+      - [x] Now playing (Movie)
+      - [x] Upcoming (Movie)
+      - [x] Top Rated (TV, X)
+      - [x] Popular (TV, Movie)
+      - [x] Airing Today (TV)
+      - [x] Detail (TV, Movie)
+      - [x] Search (Tv, Movie)
+    * api.js 에서 tvApi와 moviesApi를 만들어서 사용한다. -> 전반적으로 axios를 사용하여 api에 접근하는 것을 잘 기억해놓는것이 중요함.
 
+    * 결론 : axios를 이용하여 api를 받아오는 방법을 알게되었다. 우선 api.js라는 한곳에 모두 모아놨다는게 아주 만족스럽다. 소스도 이쁘고. 이제 이거를 가지고 component에서 데이터를 써야하는데 그건 다음 강의에서 알려줄 듯~!
+    
 ---
   
   
