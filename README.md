@@ -12,5 +12,5 @@
 1. Deployment
 ---
 ### 강의 진행 내용
-
+[문서 보기 - click!](https://github.com/alpaca623/nomflix/blob/master/Documents/studyProgress.md)
 ---
