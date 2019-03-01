@@ -88,11 +88,15 @@
   * 5-2. Container Presenter Pattern part two
 
   - 이부분에서 나오는 패턴은 아주 중요하다. 이전 리액트 페이지를 만들때 가장 힘들었던 것 중 하나인, component를 다루는 방식에 대해서 알려준다. 우선 두개의 강의를 들었는데 구분이 되는 컴포넌트를 3개의 파일로 분리한다.
-    * index.js
-    * ~Container.js
-    * ~Presenter.js
+  ```
+    - index.js
+    - ~Container.js
+    - ~Presenter.js
+  ```
   - 이렇게 했을 때, 각 파일들의 역할은 다음과 같다.
+  ```
     * index.js - 단순히 Container를 export 시킨다.
     * ~Container.js - 데이터를 받아오거나 보내는 역할을하는 컨테이너. state, axios 로직등 데이터 핸들링을 하는 부분
     * ~Presenter.js - Container.js에서 처리한 데이터를 받아서 보여주는 view의 역할이다. 함수형 컴포넌트로서 state가 존재하지 않는다.
+  ```
   - 예전에 나는 한 파일에서 view, data handling까지 다 하려고 햇었는데.. 이렇게 하면 되는것이었다.. 패턴화, 중요하네..!! index.js의 역할을 아직 잘 모르겠다. 뭔가 index.js파일을 자동으로 인식시키는 코드가 있을거같다.
