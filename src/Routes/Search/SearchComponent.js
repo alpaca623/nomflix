@@ -24,7 +24,6 @@ export default class extends React.Component {
     /* 2. 검색어가 공백이 아닐 경우, 검색요청을 한 결과를 받아온다.?? -
      * (참고)api 요청을 할 경우, await를 하지 않으면 걍 날라가버린다..
      */
-
     const {
       data: { results: tvResults }
     } = await tvApi.search(searchTerm);
