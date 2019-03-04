@@ -85,7 +85,7 @@
     
   **5. Containers**
   * 5-0. Container Presenter Pattern part one
-  * 5-2. Container Presenter Pattern part two
+  * 5-1. Container Presenter Pattern part two
 
   - 이부분에서 나오는 패턴은 아주 중요하다. 이전 리액트 페이지를 만들때 가장 힘들었던 것 중 하나인, component를 다루는 방식에 대해서 알려준다. 우선 두개의 강의를 들었는데 구분이 되는 컴포넌트를 3개의 파일로 분리한다.
   ```
@@ -100,3 +100,28 @@
     * ~Presenter.js - Container.js에서 처리한 데이터를 받아서 보여주는 view의 역할이다. 함수형 컴포넌트로서 state가 존재하지 않는다.
   ```
   - 예전에 나는 한 파일에서 view, data handling까지 다 하려고 햇었는데.. 이렇게 하면 되는것이었다.. 패턴화, 중요하네..!! index.js의 역할을 아직 잘 모르겠다. 뭔가 index.js파일을 자동으로 인식시키는 코드가 있을거같다.
+
+### 3.2~3 주말 진행사항
+  * 5-2. Home Container
+  * 5-3. TV Container
+  * 5-4. Search Container
+
+  - 상세내용은 아래에 적어놓음
+
+### 3.4 월 진행사항
+  **5. Containers**
+  * 5-2. Home Container
+  * 5-3. TV Container
+  * 5-4. Search Container
+  * 5-5. Detail Container part one
+  * 5-6. Detail Container part two
+  * 5-7. Destructuring assignment with let
+
+  - 컴포넌트의 컨테이너를 완성해 나가는 과정을 commit 하였다.
+  - 각 컨테이너는 용도에 맞게 데이터를 가져오는 부분으로 구성된다. 
+    - TV, Movie Container는 메뉴 클릭시 나올 첫 화면의 리스트를 뽑아오기 위한 api를 불러왔다.
+    - Search Container는 특정 단어의 검색어에 대한 검색결과를 api에 전달하고 그 결과를 받아온다.
+    - Detail Container는 특정 id에 해당하는 TV, Movie 데이터를 조회하여 결과를 받아온다.
+  - **아직 부족한 부분 check**
+    1. lifeCycle 다시 공부해야함 - componentDidMount안에서 setState하게될때.. 순환되는게 이해가 잘 안된다. 예전에 componentDidMount를 쓸 때 안에서 setState하게되면 에러가 났던적이 있는데, 우선 한번 더 강의를 봐야 할듯..
+    1. javascript6,7 문법을 꾸준히 보자.
