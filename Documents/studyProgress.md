@@ -137,3 +137,11 @@
   - Section component는 각 메뉴의 Section을 정해서 어떤 메뉴인지 보여주는 component다.
   - Presenter 소스를 들여다보면, 우선 함수형 컴포넌트이고, 각 컨테이너에서 받아온 데이터를 뿌려주는 역할이다. 그러므로, Presenter에서는 받아온 데이터들의 유효성을 검사해주고, 받아온 데이터에 문제가 없으면 Section컴포넌트에 전달하여 데이터를 최종적으로 그린다.
   * **6-2, 6-3 - TVPresenter and Loader Components, SearchPresenter Component**
+  - TVPresenter를 완성하였고, 요청시 대기시간이 있을 경우 보여줄 Loader Component를 추가하였다. 
+  - 확실히 Component를 Container하고 Presenter로 나누어서 작업하니까 구분이 확실히 된다.. 다행
+  - 그리고 SearchPresenter를 작업하였는데, Form에 대해서 알게된 부분이 있어 기록해 놓는다.
+    - Presenter에서는 진짜 보여주기만 하고 func는 Container에서 받아온다.
+    - Submit은 작동시 기본적으로 페이지를 redirect하여 새로고침을 일으키므로, 이를 방지하기 위해 preventDefault 함수를 사용하여 submit을 막아놓는다.
+    - handleChange함수를 따로 만들어서 controlled component를 구현한다. [controlled component 추가 정보](https://reactjs.org/docs/forms.html)
+  - 받아온 결과를 뿌리면 끝
+  - 이전에 배웠던 것들을 다시 복습하는과정이라 쉽게 눈에 들어왔다.. 진짜 다행이다.. 포기하지 말고 다 들어야겠다 얼른!!

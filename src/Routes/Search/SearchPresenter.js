@@ -24,21 +24,35 @@ const SearchPresenter = ({
   tvResults,
   searchTerm,
   handleSubmit,
+  handleChange,
   loading,
   error
 }) => (
   <Container>
     <Form onSubmit={handleSubmit}>
-      <Input placeholder="Write Movie and TV Show name..." />
+      <Input
+        placeholder="Write Movie and TV Show name..."
+        onChange={handleChange}
+      />
     </Form>
     {loading ? (
       <Loader />
     ) : (
       <>
-        {movieResults && movieResults.length > 0 && movieResults.map(movie=>
-        <Section title="Movie Search Result">
-          <span key={movie.id}>{movie.title}</span>
-        </Section>)}
+        {movieResults && movieResults.length > 0 && (
+          <Section title="Movie Search Result">
+            {movieResults.map(movie => (
+              <span key={movie.id}>{movie.title}</span>
+            ))}
+          </Section>
+        )}
+        {tvResults && tvResults.length > 0 && (
+          <Section title="Movie Search Result">
+            {tvResults.map(show => (
+              <span key={show.id}>{show.name}</span>
+            ))}
+          </Section>
+        )}
       </>
     )}
   </Container>
@@ -49,6 +63,7 @@ SearchPresenter.propTypes = {
   tvResults: PropTypes.array,
   searchTerm: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired,
+  handleChange:PropTypes.func.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.string
 };
