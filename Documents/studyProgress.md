@@ -114,7 +114,7 @@
   * 5-3. TV Container
   * 5-4. Search Container
   * 5-5. Detail Container part one
-  * 5-6. Detail Container part two
+  * 5-6. Detail Cotainer part two
   * 5-7. Destructuring assignment with let
 
   - 컴포넌트의 컨테이너를 완성해 나가는 과정을 commit 하였다.
@@ -125,3 +125,11 @@
   - **아직 부족한 부분 check**
     1. lifeCycle 다시 공부해야함 - componentDidMount안에서 setState하게될때.. 순환되는게 이해가 잘 안된다. 예전에 componentDidMount를 쓸 때 안에서 setState하게되면 에러가 났던적이 있는데, 우선 한번 더 강의를 봐야 할듯..
     1. javascript6,7 문법을 꾸준히 보자.
+
+### 3.5 화 진행사항
+  **6. Presenters**
+  * 6-0 Presenter Structure
+  - 각 Presenter의 구조를 잡는다. Presenter는 Component에서 보내는 props를 가지고 presenter를 만든다.
+  - 여기서 propTypes를 이용하여 데이터의 타입을 check하고 있다.
+    - propTypes는 말 그대로 property의 type를 체크하는 것이다. [proptype의 추가정보](https://medium.com/@sangboaklee/react-proptypes-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0-7a0615da236)
+  
