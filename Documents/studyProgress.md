@@ -136,4 +136,4 @@
   - presenter의 내부구조를 잡는다. Section Component를 추가하여 Home 컴포넌트에 추가하는 방식으로 바꾸었다.
   - Section component는 각 메뉴의 Section을 정해서 어떤 메뉴인지 보여주는 component다.
   - Presenter 소스를 들여다보면, 우선 함수형 컴포넌트이고, 각 컨테이너에서 받아온 데이터를 뿌려주는 역할이다. 그러므로, Presenter에서는 받아온 데이터들의 유효성을 검사해주고, 받아온 데이터에 문제가 없으면 Section컴포넌트에 전달하여 데이터를 최종적으로 그린다.
-  
+  * **6-2, 6-3 - TVPresenter and Loader Components, SearchPresenter Component**

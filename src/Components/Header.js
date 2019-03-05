@@ -11,6 +11,7 @@ const Header = styled.header`
   width: 100%;
   height: 50px;
   align-items: center;
+  display: flex;
 
   background-color: rgba(20, 20, 20, 0.8);
   z-index: 10;
@@ -23,11 +24,12 @@ const List = styled.ul`
 
 const Item = styled.li`
   width: 80px;
-  height:50px;
+  height: 50px;
   text-align: center;
 
-  border-bottom:5px solid ${props=>(props.current ? "#3498db" : "transparent")};
-  transition : border-bottom 0.5s ease-in-out;
+  border-bottom: 3px solid
+    ${props => (props.current ? "#3498db" : "transparent")};
+  transition: border-bottom 0.5s ease-in-out;
 `;
 
 const Slink = styled(Link)`
@@ -37,7 +39,7 @@ const Slink = styled(Link)`
   align-items: center;
 `;
 
-export default withRouter(({location:{pathname}}) => (
+export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
       <Item current={pathname === "/"}>
