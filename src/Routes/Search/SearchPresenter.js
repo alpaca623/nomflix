@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Section from "../../Components/Section";
 import Loader from "Components/Loader";
+import Message from "../../Components/Message";
 
 const Container = styled.div`
   padding: 0 20px;
@@ -53,6 +54,15 @@ const SearchPresenter = ({
             ))}
           </Section>
         )}
+        {error && (
+          <Message text="Errors, send message administrator" color="#e74c3c" />
+        )}
+        {tvResults &&
+          movieResults &&
+          tvResults.length === 0 &&
+          movieResults.length === 0 && (
+            <Message text="Nothing movie / tv shows" color="#7f8c8d" />
+          )}
       </>
     )}
   </Container>
@@ -63,7 +73,7 @@ SearchPresenter.propTypes = {
   tvResults: PropTypes.array,
   searchTerm: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired,
-  handleChange:PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.string
 };

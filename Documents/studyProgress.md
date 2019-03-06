@@ -1,5 +1,16 @@
 # 강의 진행 내용 기록!
 
+### __3.6 수 진행내용__
+  * **6.4 Message Component**
+  - 에러가 났을 때, 페이지를 찾을 수 없을 때 보여줄 Message Component를 만들었다.
+  - Message컴포넌트는 보여줄 text와 해당 text의 color을 전달해야 한다.
+  - 사용법은 3가지정도로 나눌 수 있다.
+    - Error
+    - 검색결과가 없을 시 - search 화면의 경우
+    - 404 page not found
+  - 새로 알아낸 것
+    - styled-components에서, 각 styled에 값을 전달하는 방법은 여러가지가 있겠지만.. ```${props => props.color}``` 이런 식으로 전달이 가능하다.
+
 ### __2.23 토 진행내용__
 
   **1. Fundamentals**
