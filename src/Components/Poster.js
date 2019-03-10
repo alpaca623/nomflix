@@ -3,23 +3,62 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Container = styled.div``;
+const Container = styled.div`
+  font-size: 12px;
+`;
 
-const ImageContainer = styled.div``;
+const Image = styled.div`
+  background-image: url(${props => props.bgUrl});
+  height: 180px;
+  background-size: cover;
+  border-radius: 3px;
+  background-position:center center;
+  transition:opacity 0.1s linear;
+`;
 
-const Image = styled.div``;
+const Rating = styled.div`
+  bottom: 3px;
+  right: 5px;
+  position: absolute;
+  opacity: 0;
+  transition:opacity 0.1s linear;
+`;
 
-const Title = styled.div``;
+const ImageContainer = styled.div`
+  margin-bottom: 5px;
+  position: relative;
+  &:hover {
+    ${Image} {
+      opacity: 0.3;
+    }
+    ${Rating} {
+      opacity: 1;
+    }
+  }
+`;
+const Title = styled.div`
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+`;
 
-const Rating = styled.div``;
-
-const Year = styled.div``;
+const Year = styled.div`
+  font-size: 12px;
+  font-color: #bdc3c7;
+`;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
   <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
+    {console.log(imageUrl)}
     <Container>
       <ImageContainer>
-        <Image bgUrl={imageUrl} />
+        <Image
+          bgUrl={
+            imageUrl
+              ? `https://image.tmdb.org/t/p/w300${imageUrl}`
+              : require("../assets/noImage.png")
+          }
+        />
         <Rating>
           <span role="img" aria-label="rating">
             ️️⭐
@@ -27,7 +66,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
           {rating}/10
         </Rating>
       </ImageContainer>
-      <Title>{title}</Title>
+      <Title>{title.length > 18 ? `${title.substring(0,16)}...` : title}</Title>
       <Year>{year}</Year>
     </Container>
   </Link>
