@@ -41,9 +41,14 @@ const Cover = styled.div`
   border-radius: 5px;
 `;
 
-const ItemContainer = styled.div`
+const Data = styled.div`
+  width: 70%;
   margin: 10px 20px;
-  display:flex;
+`;
+
+const ItemContainer = styled.div`
+  display: flex;
+  margin: 10px 0;
 `;
 
 const Title = styled.div`
@@ -55,6 +60,13 @@ const Item = styled.span``;
 
 const Divider = styled.div`
   margin: 0 10px;
+`;
+
+const Paragraph = styled.p`
+  line-height: 1.5;
+  font-size: 12px;
+  opacity: 0.7;
+  width: 50%;
 `;
 
 const SearchPresenter = ({ result, error, loading }) =>
@@ -73,20 +85,38 @@ const SearchPresenter = ({ result, error, loading }) =>
               : require("../../assets/noImage.png")
           }
         />
-        <Title>
-          {result.original_title ? result.original_title : result.original_name}
-        </Title>
-        <ItemContainer>
-          <Item>
-            {result.release_date
-              ? result.release_date.substring(0, 4)
-              : result.first_air_date.substring(0, 4)}
-          </Item>
-          <Divider>∙</Divider>
-          <Item>
-            {result.runtime ? result.runtime : result.episode_run_time[0]} min
-          </Item>
-        </ItemContainer>
+        <Data>
+          <Title>
+            {result.original_title
+              ? result.original_title
+              : result.original_name}
+          </Title>
+          <ItemContainer>
+            <Item>
+              {result.release_date
+                ? result.release_date.substring(0, 4)
+                : result.first_air_date.substring(0, 4)}
+            </Item>
+            <Divider>∙</Divider>
+            <Item>
+              {result.runtime === null
+                ? result.runtime
+                : result.episode_run_time[0]}{" "}
+              min
+            </Item>
+            <Divider>∙</Divider>
+            <Item>
+              {result.genres &&
+                result.genres.length > 0 &&
+                result.genres.map((genre, index) =>
+                  result.genres.length - 1 === index
+                    ? genre.name
+                    : `${genre.name} / `
+                )}
+            </Item>
+          </ItemContainer>
+          <Paragraph>{result.overview}</Paragraph>
+        </Data>
       </Content>
     </Container>
   );
