@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
+import Helmet from "react-helmet";
 import Loader from "Components/Loader";
 
 const Container = styled.div`
@@ -69,53 +70,64 @@ const Paragraph = styled.p`
   width: 50%;
 `;
 
-const SearchPresenter = ({ result, error, loading }) =>
-  loading ? (
-    <Loader />
-  ) : (
-    <Container>
-      <Backdrop
-        bgImg={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
-      />
-      <Content>
-        <Cover
-          bgImg={
-            result.poster_path
-              ? `https://image.tmdb.org/t/p/original${result.poster_path}`
-              : require("../../assets/noImage.png")
-          }
-        />
-        <Data>
-          <Title>
+const SearchPresenter = ({ result, error, loading }) => (
+  <>
+    {loading ? (
+      <Loader />
+    ) : (
+      <Container>
+        <Helmet>
+          <title>
             {result.original_title
               ? result.original_title
               : result.original_name}
-          </Title>
-          <ItemContainer>
-            <Item>
-              {result.release_date
-                ? result.release_date.substring(0, 4)
-                : result.first_air_date.substring(0, 4)}
-            </Item>
-            <Divider>∙</Divider>
-            <Item>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} min
-            </Item>
-            <Divider>∙</Divider>
-            <Item>
-              {result.genres &&
-                result.genres.map((genre, index) =>
-                  result.genres.length - 1 === index
-                    ? genre.name
-                    : `${genre.name} / `
-                )}
-            </Item>
-          </ItemContainer>
-          <Paragraph>{result.overview}</Paragraph>
-        </Data>
-      </Content>
-    </Container>
-  );
+          </title>
+        </Helmet>
+        <Backdrop
+          bgImg={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
+        />
+        <Content>
+          <Cover
+            bgImg={
+              result.poster_path
+                ? `https://image.tmdb.org/t/p/original${result.poster_path}`
+                : require("../../assets/noImage.png")
+            }
+          />
+          <Data>
+            <Title>
+              {result.original_title
+                ? result.original_title
+                : result.original_name}
+            </Title>
+            <ItemContainer>
+              <Item>
+                {result.release_date
+                  ? result.release_date.substring(0, 4)
+                  : result.first_air_date.substring(0, 4)}
+              </Item>
+              <Divider>∙</Divider>
+              <Item>
+                {result.runtime ? result.runtime : result.episode_run_time[0]}{" "}
+                min
+              </Item>
+              <Divider>∙</Divider>
+              <Item>
+                {result.genres &&
+                  result.genres.map((genre, index) =>
+                    result.genres.length - 1 === index
+                      ? genre.name
+                      : `${genre.name} / `
+                  )}
+              </Item>
+            </ItemContainer>
+            <Paragraph>{result.overview}</Paragraph>
+          </Data>
+        </Content>
+      </Container>
+    )}
+  </>
+);
 
 SearchPresenter.propTypes = {
   result: propTypes.object,
