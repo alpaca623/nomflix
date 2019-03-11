@@ -99,15 +99,11 @@ const SearchPresenter = ({ result, error, loading }) =>
             </Item>
             <Divider>∙</Divider>
             <Item>
-              {result.runtime === null
-                ? result.runtime
-                : result.episode_run_time[0]}{" "}
-              min
+              {result.runtime ? result.runtime : result.episode_run_time[0]} min
             </Item>
             <Divider>∙</Divider>
             <Item>
               {result.genres &&
-                result.genres.length > 0 &&
                 result.genres.map((genre, index) =>
                   result.genres.length - 1 === index
                     ? genre.name
